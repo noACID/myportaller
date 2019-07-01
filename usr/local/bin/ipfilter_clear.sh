@@ -1,0 +1,19 @@
+#!/bin/bash
+
+IPTABLES="/sbin/iptables"
+
+
+#$IPTABLES -F INPUT
+#$IPTABLES -F OUTPUT
+#$IPTABLES -F FORWARD
+
+$IPTABLES -F
+$IPTABLES -X
+$IPTABLES -Z
+$IPTABLES -t nat -F
+
+$IPTABLES -P INPUT ACCEPT
+$IPTABLES -P OUTPUT ACCEPT
+$IPTABLES -P FORWARD ACCEPT 
+
+echo "0" >/proc/sys/net/ipv4/ip_forward

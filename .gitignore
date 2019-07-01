@@ -1,4 +1,6 @@
 *
+!.gitignore
+# myportaller
 !etc
 !etc/sniproxy.conf
 !etc/unbound
@@ -9,5 +11,13 @@
 !var/lib
 !var/lib/unbound
 !var/lib/unbound/named.root
-!.gitignore
+# firewall
+!etc/rc.local
+!usr
+!usr/local
+!usr/local/bin
+!usr/local/bin/ipfilter*.sh
+# system
+!etc/sysctl.d
+!etc/sysctl.d/50-ipv6.conf
 
