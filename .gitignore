@@ -1,0 +1,13 @@
+*
+!etc
+!etc/sniproxy.conf
+!etc/unbound
+!etc/unbound/unbound.conf
+!etc/unbound/conf.d/
+!etc/unbound/conf.d/myportaller.conf
+!var
+!var/lib
+!var/lib/unbound
+!var/lib/unbound/named.root
+!.gitignore
+
