@@ -7,11 +7,13 @@ sleep 1
 IPTABLES="/sbin/iptables"
 
 # External 
-EXT_IFACE0="eth0"
-EXT_IP="167.71.171.224"
+EXT_IFACE0="enp2s0"
+EXT_IP="162.210.192.19"
 
 INT_IFACE0="eth1"
 INT_IFACES="lo"
+
+EXT_IP2="162.210.192.23"
 
 ##########################################
 # CLEANUP
@@ -61,6 +63,9 @@ $IPTABLES -A INPUT -i $EXT_IFACE0 -p udp --destination-port 53 -m string --hex-s
 $IPTABLES -A INPUT -i $EXT_IFACE0 -p udp --destination-port 53 -j ACCEPT
 $IPTABLES -A INPUT -i $EXT_IFACE0 -p tcp --destination-port 53 -j ACCEPT
 
+# HTTP, HTTPS services
+$IPTABLES -A INPUT -i $EXT_IFACE0 -p tcp --destination-port 80 -j ACCEPT
+$IPTABLES -A INPUT -i $EXT_IFACE0 -p tcp --destination-port 443 -j ACCEPT
 
 # ICMP packets
 $IPTABLES -N icmp_packets

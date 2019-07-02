@@ -7,6 +7,10 @@
 !etc/unbound/unbound.conf
 !etc/unbound/conf.d/
 !etc/unbound/conf.d/myportaller.conf
+!etc/bind
+!etc/bind/*
+!etc/haproxy
+!etc/haproxy/*
 !var
 !var/lib
 !var/lib/unbound
